@@ -1,0 +1,25 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "main": "jquery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YollolParfum/Pagina.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YollolParfum/Pagina/issues"
+  },
+  "homepage": "https://github.com/YollolParfum/Pagina#readme",
+  "description": "",
+  "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
+    "firebase": "^11.3.0"
+  },
+  "type": "commonjs"
+}

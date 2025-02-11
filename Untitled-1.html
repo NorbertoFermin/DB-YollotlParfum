@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo</title>
+<style>
+  .u-btn {
+    display: block;
+    margin: 10px 0;
+  }
+  .char{
+    display: none;
+    font-size: 24px;
+  }
+  .char1 { color: red; }
+  .char2 { color: green; }
+  .char3 { color: blue; }
+</style>
+</head>
+<body>
+
+<a href="" class="u-btn u-button-style u-btn-1">Elegir Pedido 1</a>
+<a href="" class="u-btn u-button-style u-btn-2">Elegir Pedido 2</a>
+<a href="" class="u-btn u-button-style u-btn-3">Elegir Pedido 3</a>
+
+<span id="char1" class="char char1">¡</span>
+<span id="char2" class="char char2">¿</span>
+<span id="char3" class="char char3">¡</span>
+
+<script>
+  const buttons = [
+    { selector: '.u-btn-1', charId: 'char1' },
+    { selector: '.u-btn-2', charId: 'char2' },
+    { selector: '.u-btn-3', charId: 'char3' }
+  ];
+  
+  buttons.forEach(button => {
+    document.querySelector(button.selector).addEventListener('click', function(event) {
+      event.preventDefault();
+      
+      const charElement = document.getElementById(button.charId);
+      charElement.style.display = 'block';
+      charElement.innerHTML = charElement.textContent;
+      
+      setTimeout(function() {
+        charElement.innerHTML = '&nbsp;';
+      }, 3000); // Muestra el carácter durante 3 segundos (3000 ms)
+    });
+  });
+</script>
+
+</body>
+</html>

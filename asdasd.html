@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones</title>
+    <style>
+        .boton-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+        .numero {
+            margin-top: 5px;
+        }
+        .u-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #FFF;
+            border-radius: 5px;
+        }
+        .u-btn:disabled {
+            background-color: #CCC;
+        }
+    </style>
+    <script>
+        function cambiarNumero(boton, nuevoNumero) {
+            const numero = boton.nextElementSibling;
+            setTimeout(() => {
+                numero.textContent = nuevoNumero;
+                boton.onclick = null; // Deshabilita el enlace
+                boton.style.backgroundColor = '#CCC'; // Cambia el color del botón deshabilitado
+                boton.style.pointerEvents = 'none'; // Deshabilita la interacción del botón
+            }, 5000);
+        }
+    </script>
+</head>
+<body>
+    <div class="boton-container">
+        <a href="#" class="u-btn u-btn-1" onclick="cambiarNumero(this, 2); return false;">Elegir Pedido 1</a>
+        <div class="numero">1</div>
+    </div>
+    <div class="boton-container">
+        <a href="#" class="u-btn u-btn-1" onclick="cambiarNumero(this, 4); return false;">Elegir Pedido 3</a>
+        <div class="numero">3</div>
+    </div>
+    <div class="boton-container">
+        <a href="#" class="u-btn u-btn-1" onclick="cambiarNumero(this, 6); return false;">Elegir Pedido 5</a>
+        <div class="numero">5</div>
+    </div>
+</body>
+</html>
